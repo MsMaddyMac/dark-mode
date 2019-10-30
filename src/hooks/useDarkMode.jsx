@@ -8,11 +8,8 @@ function useDarkMode(key, initialValues) {
     const body = document.querySelector('body');
 
     useEffect(() => {
-        if(theme) {
-            body.classList.add('dark-mode');
-        }else{
-            body.classList.remove('dark-mode');
-        }
+        return (theme ? body.classList.add('dark-mode') 
+        : body.classList.remove('dark-mode'));
 }, [theme])
 
 return [theme, setTheme];
